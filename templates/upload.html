@@ -1,0 +1,23 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h1 class="title">上傳文件</h1>
+    <p class="subtitle">選擇要上傳的文件並按下提交</p>
+    
+    <form action="/upload" method="POST" enctype="multipart/form-data" class="upload-form">
+        <input type="file" name="file" accept=".wasm">
+        <br><br>
+        <button type="submit" name="submit">Upload File</button>
+    </form>
+
+    {% if uploading %}
+        <p>上傳中...</p>
+    {% endif %}
+
+    {% if success_message %}
+        <p>{{ success_message }}</p>
+    {% endif %}
+</div>
+{% endblock %}
