@@ -1,0 +1,528 @@
+2023-09-21 20:14:28,936 - WARNING -  * Debugger is active!
+2023-09-21 20:14:28,937 - INFO -  * Debugger PIN: 757-131-889
+2023-09-21 20:14:50,283 - INFO -  * Detected change in '/home/bcscan/workspace/bc_scan/bc_scan/main.py', reloading
+2023-09-21 20:14:50,894 - WARNING -  * Debugger is active!
+2023-09-21 20:14:50,894 - INFO -  * Debugger PIN: 757-131-889
+2023-09-21 20:14:53,214 - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2023-09-21 20:14:53,215 - INFO -  * Restarting with stat
+2023-09-21 20:14:53,704 - WARNING -  * Debugger is active!
+2023-09-21 20:14:53,705 - INFO -  * Debugger PIN: 757-131-889
+2023-09-21 20:14:55,648 - INFO - 127.0.0.1 - - [21/Sep/2023 20:14:55] "GET /task HTTP/1.1" 200 -
+2023-09-21 20:14:55,700 - INFO - 127.0.0.1 - - [21/Sep/2023 20:14:55] "[36mGET /static/css/task.css HTTP/1.1[0m" 304 -
+2023-09-21 20:14:55,705 - INFO - 127.0.0.1 - - [21/Sep/2023 20:14:55] "[36mGET /static/css/scan_result.css HTTP/1.1[0m" 304 -
+2023-09-21 20:14:56,506 - INFO - 127.0.0.1 - - [21/Sep/2023 20:14:56] "GET /task HTTP/1.1" 200 -
+2023-09-21 20:14:56,552 - INFO - 127.0.0.1 - - [21/Sep/2023 20:14:56] "[36mGET /static/css/task.css HTTP/1.1[0m" 304 -
+2023-09-21 20:14:56,556 - INFO - 127.0.0.1 - - [21/Sep/2023 20:14:56] "[36mGET /static/css/scan_result.css HTTP/1.1[0m" 304 -
+2023-09-21 20:14:57,387 - ERROR - Exception during reset or similar
+Traceback (most recent call last):
+  File "/home/bcscan/.virtualenvs/bc_scan/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 763, in _finalize_fairy
+    fairy._reset(pool, transaction_was_reset)
+  File "/home/bcscan/.virtualenvs/bc_scan/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 1038, in _reset
+    pool._dialect.do_rollback(self)
+  File "/home/bcscan/.virtualenvs/bc_scan/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 683, in do_rollback
+    dbapi_connection.rollback()
+sqlite3.ProgrammingError: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 139995089127168 and this is thread id 139995080210176.
+2023-09-21 20:14:57,390 - ERROR - Exception closing connection <sqlite3.Connection object at 0x7f5326319730>
+Traceback (most recent call last):
+  File "/home/bcscan/.virtualenvs/bc_scan/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 763, in _finalize_fairy
+    fairy._reset(pool, transaction_was_reset)
+  File "/home/bcscan/.virtualenvs/bc_scan/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 1038, in _reset
+    pool._dialect.do_rollback(self)
+  File "/home/bcscan/.virtualenvs/bc_scan/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 683, in do_rollback
+    dbapi_connection.rollback()
+sqlite3.ProgrammingError: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 139995089127168 and this is thread id 139995080210176.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bcscan/.virtualenvs/bc_scan/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 260, in _close_connection
+    self._dialect.do_terminate(connection)
+  File "/home/bcscan/.virtualenvs/bc_scan/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 689, in do_terminate
+    self.do_close(dbapi_connection)
+  File "/home/bcscan/.virtualenvs/bc_scan/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 692, in do_close
+    dbapi_connection.close()
+sqlite3.ProgrammingError: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 139995089127168 and this is thread id 139995080210176.
+2023-09-21 20:14:57,391 - ERROR - Exception during reset or similar
+Traceback (most recent call last):
+  File "/home/bcscan/.virtualenvs/bc_scan/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 763, in _finalize_fairy
+    fairy._reset(pool, transaction_was_reset)
+  File "/home/bcscan/.virtualenvs/bc_scan/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 1038, in _reset
+    pool._dialect.do_rollback(self)
+  File "/home/bcscan/.virtualenvs/bc_scan/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 683, in do_rollback
+    dbapi_connection.rollback()
+sqlite3.ProgrammingError: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 139995089127168 and this is thread id 139995080210176.
+2023-09-21 20:14:57,391 - ERROR - Exception closing connection <sqlite3.Connection object at 0x7f5325077030>
+Traceback (most recent call last):
+  File "/home/bcscan/.virtualenvs/bc_scan/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 763, in _finalize_fairy
+    fairy._reset(pool, transaction_was_reset)
+  File "/home/bcscan/.virtualenvs/bc_scan/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 1038, in _reset
+    pool._dialect.do_rollback(self)
+  File "/home/bcscan/.virtualenvs/bc_scan/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 683, in do_rollback
+    dbapi_connection.rollback()
+sqlite3.ProgrammingError: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 139995089127168 and this is thread id 139995080210176.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bcscan/.virtualenvs/bc_scan/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 260, in _close_connection
+    self._dialect.do_terminate(connection)
+  File "/home/bcscan/.virtualenvs/bc_scan/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 689, in do_terminate
+    self.do_close(dbapi_connection)
+  File "/home/bcscan/.virtualenvs/bc_scan/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 692, in do_close
+    dbapi_connection.close()
+sqlite3.ProgrammingError: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 139995089127168 and this is thread id 139995080210176.
+2023-09-21 20:14:57,395 - INFO - 127.0.0.1 - - [21/Sep/2023 20:14:57] "GET /upload HTTP/1.1" 200 -
+2023-09-21 20:14:57,441 - INFO - 127.0.0.1 - - [21/Sep/2023 20:14:57] "[36mGET /static/css/upload.css HTTP/1.1[0m" 304 -
+2023-09-21 20:14:57,443 - INFO - 127.0.0.1 - - [21/Sep/2023 20:14:57] "[36mGET /static/js/upload.js HTTP/1.1[0m" 304 -
+2023-09-21 20:15:17,084 - INFO -  * Detected change in '/home/bcscan/workspace/bc_scan/bc_scan/main.py', reloading
+2023-09-21 20:15:17,109 - ERROR - Exception during reset or similar
+Traceback (most recent call last):
+  File "/home/bcscan/.virtualenvs/bc_scan/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 763, in _finalize_fairy
+    fairy._reset(pool, transaction_was_reset)
+  File "/home/bcscan/.virtualenvs/bc_scan/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 1038, in _reset
+    pool._dialect.do_rollback(self)
+  File "/home/bcscan/.virtualenvs/bc_scan/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 683, in do_rollback
+    dbapi_connection.rollback()
+sqlite3.ProgrammingError: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 139995080210176 and this is thread id 139995215152960.
+2023-09-21 20:15:17,110 - ERROR - Exception closing connection <sqlite3.Connection object at 0x7f5325077650>
+Traceback (most recent call last):
+  File "/home/bcscan/.virtualenvs/bc_scan/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 763, in _finalize_fairy
+    fairy._reset(pool, transaction_was_reset)
+  File "/home/bcscan/.virtualenvs/bc_scan/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 1038, in _reset
+    pool._dialect.do_rollback(self)
+  File "/home/bcscan/.virtualenvs/bc_scan/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 683, in do_rollback
+    dbapi_connection.rollback()
+sqlite3.ProgrammingError: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 139995080210176 and this is thread id 139995215152960.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bcscan/.virtualenvs/bc_scan/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 260, in _close_connection
+    self._dialect.do_terminate(connection)
+  File "/home/bcscan/.virtualenvs/bc_scan/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 689, in do_terminate
+    self.do_close(dbapi_connection)
+  File "/home/bcscan/.virtualenvs/bc_scan/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 692, in do_close
+    dbapi_connection.close()
+sqlite3.ProgrammingError: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 139995080210176 and this is thread id 139995215152960.
+2023-09-21 20:15:17,175 - INFO -  * Restarting with stat
+2023-09-21 20:15:17,687 - WARNING -  * Debugger is active!
+2023-09-21 20:15:17,688 - INFO -  * Debugger PIN: 757-131-889
+2023-09-21 20:15:18,221 - INFO - 127.0.0.1 - - [21/Sep/2023 20:15:18] "GET /upload HTTP/1.1" 200 -
+2023-09-21 20:15:18,260 - INFO - 127.0.0.1 - - [21/Sep/2023 20:15:18] "[36mGET /static/js/upload.js HTTP/1.1[0m" 304 -
+2023-09-21 20:15:18,262 - INFO - 127.0.0.1 - - [21/Sep/2023 20:15:18] "[36mGET /static/css/upload.css HTTP/1.1[0m" 304 -
+2023-09-21 20:15:20,921 - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2023-09-21 20:15:20,922 - INFO -  * Restarting with stat
+2023-09-21 20:15:21,427 - WARNING -  * Debugger is active!
+2023-09-21 20:15:21,429 - INFO -  * Debugger PIN: 757-131-889
+2023-09-21 20:15:22,488 - INFO -  * Detected change in '/home/bcscan/workspace/bc_scan/bc_scan/main.py', reloading
+2023-09-21 20:15:22,567 - INFO -  * Restarting with stat
+2023-09-21 20:15:23,076 - WARNING -  * Debugger is active!
+2023-09-21 20:15:23,076 - INFO -  * Debugger PIN: 757-131-889
+2023-09-21 20:15:23,114 - INFO - 127.0.0.1 - - [21/Sep/2023 20:15:23] "GET /upload HTTP/1.1" 200 -
+2023-09-21 20:15:23,209 - INFO - 127.0.0.1 - - [21/Sep/2023 20:15:23] "[36mGET /static/js/upload.js HTTP/1.1[0m" 304 -
+2023-09-21 20:15:23,214 - INFO - 127.0.0.1 - - [21/Sep/2023 20:15:23] "[36mGET /static/css/upload.css HTTP/1.1[0m" 304 -
+2023-09-21 20:15:23,221 - INFO - 127.0.0.1 - - [21/Sep/2023 20:15:23] "GET /upload HTTP/1.1" 200 -
+2023-09-21 20:15:23,304 - INFO - 127.0.0.1 - - [21/Sep/2023 20:15:23] "[36mGET /static/js/upload.js HTTP/1.1[0m" 304 -
+2023-09-21 20:15:23,308 - INFO - 127.0.0.1 - - [21/Sep/2023 20:15:23] "[36mGET /static/css/upload.css HTTP/1.1[0m" 304 -
+2023-09-21 20:15:23,809 - ERROR - Exception during reset or similar
+Traceback (most recent call last):
+  File "/home/bcscan/.virtualenvs/bc_scan/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 763, in _finalize_fairy
+    fairy._reset(pool, transaction_was_reset)
+  File "/home/bcscan/.virtualenvs/bc_scan/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 1038, in _reset
+    pool._dialect.do_rollback(self)
+  File "/home/bcscan/.virtualenvs/bc_scan/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 683, in do_rollback
+    dbapi_connection.rollback()
+sqlite3.ProgrammingError: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 140524869342976 and this is thread id 140524860425984.
+2023-09-21 20:15:23,810 - ERROR - Exception closing connection <sqlite3.Connection object at 0x7fce7f8e7810>
+Traceback (most recent call last):
+  File "/home/bcscan/.virtualenvs/bc_scan/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 763, in _finalize_fairy
+    fairy._reset(pool, transaction_was_reset)
+  File "/home/bcscan/.virtualenvs/bc_scan/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 1038, in _reset
+    pool._dialect.do_rollback(self)
+  File "/home/bcscan/.virtualenvs/bc_scan/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 683, in do_rollback
+    dbapi_connection.rollback()
+sqlite3.ProgrammingError: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 140524869342976 and this is thread id 140524860425984.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bcscan/.virtualenvs/bc_scan/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 260, in _close_connection
+    self._dialect.do_terminate(connection)
+  File "/home/bcscan/.virtualenvs/bc_scan/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 689, in do_terminate
+    self.do_close(dbapi_connection)
+  File "/home/bcscan/.virtualenvs/bc_scan/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 692, in do_close
+    dbapi_connection.close()
+sqlite3.ProgrammingError: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 140524869342976 and this is thread id 140524860425984.
+2023-09-21 20:15:23,811 - ERROR - Exception during reset or similar
+Traceback (most recent call last):
+  File "/home/bcscan/.virtualenvs/bc_scan/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 763, in _finalize_fairy
+    fairy._reset(pool, transaction_was_reset)
+  File "/home/bcscan/.virtualenvs/bc_scan/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 1038, in _reset
+    pool._dialect.do_rollback(self)
+  File "/home/bcscan/.virtualenvs/bc_scan/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 683, in do_rollback
+    dbapi_connection.rollback()
+sqlite3.ProgrammingError: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 140524869342976 and this is thread id 140524860425984.
+2023-09-21 20:15:23,811 - ERROR - Exception closing connection <sqlite3.Connection object at 0x7fce7e647110>
+Traceback (most recent call last):
+  File "/home/bcscan/.virtualenvs/bc_scan/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 763, in _finalize_fairy
+    fairy._reset(pool, transaction_was_reset)
+  File "/home/bcscan/.virtualenvs/bc_scan/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 1038, in _reset
+    pool._dialect.do_rollback(self)
+  File "/home/bcscan/.virtualenvs/bc_scan/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 683, in do_rollback
+    dbapi_connection.rollback()
+sqlite3.ProgrammingError: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 140524869342976 and this is thread id 140524860425984.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bcscan/.virtualenvs/bc_scan/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 260, in _close_connection
+    self._dialect.do_terminate(connection)
+  File "/home/bcscan/.virtualenvs/bc_scan/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 689, in do_terminate
+    self.do_close(dbapi_connection)
+  File "/home/bcscan/.virtualenvs/bc_scan/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 692, in do_close
+    dbapi_connection.close()
+sqlite3.ProgrammingError: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 140524869342976 and this is thread id 140524860425984.
+2023-09-21 20:15:23,816 - INFO - 127.0.0.1 - - [21/Sep/2023 20:15:23] "GET /profile HTTP/1.1" 200 -
+2023-09-21 20:15:24,259 - INFO - -1
+2023-09-21 20:15:24,259 - INFO - -1
+2023-09-21 20:15:24,263 - INFO - 127.0.0.1 - - [21/Sep/2023 20:15:24] "GET /task HTTP/1.1" 200 -
+2023-09-21 20:15:24,306 - INFO - 127.0.0.1 - - [21/Sep/2023 20:15:24] "[36mGET /static/css/task.css HTTP/1.1[0m" 304 -
+2023-09-21 20:15:24,309 - INFO - 127.0.0.1 - - [21/Sep/2023 20:15:24] "[36mGET /static/css/scan_result.css HTTP/1.1[0m" 304 -
+2023-09-21 20:15:25,032 - INFO - -1
+2023-09-21 20:15:25,032 - INFO - -1
+2023-09-21 20:15:25,033 - INFO - 127.0.0.1 - - [21/Sep/2023 20:15:25] "GET /task HTTP/1.1" 200 -
+2023-09-21 20:15:25,073 - INFO - 127.0.0.1 - - [21/Sep/2023 20:15:25] "[36mGET /static/css/task.css HTTP/1.1[0m" 304 -
+2023-09-21 20:15:25,078 - INFO - 127.0.0.1 - - [21/Sep/2023 20:15:25] "[36mGET /static/css/scan_result.css HTTP/1.1[0m" 304 -
+2023-09-21 20:15:25,393 - INFO - -1
+2023-09-21 20:15:25,393 - INFO - -1
+2023-09-21 20:15:25,394 - INFO - 127.0.0.1 - - [21/Sep/2023 20:15:25] "GET /task HTTP/1.1" 200 -
+2023-09-21 20:15:25,440 - INFO - 127.0.0.1 - - [21/Sep/2023 20:15:25] "[36mGET /static/css/scan_result.css HTTP/1.1[0m" 304 -
+2023-09-21 20:15:25,443 - INFO - 127.0.0.1 - - [21/Sep/2023 20:15:25] "[36mGET /static/css/task.css HTTP/1.1[0m" 304 -
+2023-09-21 20:15:25,686 - INFO - -1
+2023-09-21 20:15:25,686 - INFO - -1
+2023-09-21 20:15:25,686 - INFO - 127.0.0.1 - - [21/Sep/2023 20:15:25] "GET /task HTTP/1.1" 200 -
+2023-09-21 20:15:25,726 - INFO - 127.0.0.1 - - [21/Sep/2023 20:15:25] "[36mGET /static/css/scan_result.css HTTP/1.1[0m" 304 -
+2023-09-21 20:15:25,728 - INFO - 127.0.0.1 - - [21/Sep/2023 20:15:25] "[36mGET /static/css/task.css HTTP/1.1[0m" 304 -
+2023-09-21 20:17:36,569 - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2023-09-21 20:17:36,572 - INFO -  * Restarting with stat
+2023-09-21 20:17:37,117 - WARNING -  * Debugger is active!
+2023-09-21 20:17:37,118 - INFO -  * Debugger PIN: 757-131-889
+[32m2023-09-21 20:17:40 - INFO - -1[0m
+2023-09-21 20:17:40,141 - INFO - -1
+2023-09-21 20:17:40,153 - INFO - 127.0.0.1 - - [21/Sep/2023 20:17:40] "GET /task HTTP/1.1" 200 -
+2023-09-21 20:17:40,202 - INFO - 127.0.0.1 - - [21/Sep/2023 20:17:40] "[36mGET /static/css/task.css HTTP/1.1[0m" 304 -
+2023-09-21 20:17:40,205 - INFO - 127.0.0.1 - - [21/Sep/2023 20:17:40] "[36mGET /static/css/scan_result.css HTTP/1.1[0m" 304 -
+[32m2023-09-21 20:17:41 - INFO - -1[0m
+2023-09-21 20:17:41,873 - INFO - -1
+2023-09-21 20:17:41,874 - INFO - 127.0.0.1 - - [21/Sep/2023 20:17:41] "GET /task HTTP/1.1" 200 -
+2023-09-21 20:17:41,912 - INFO - 127.0.0.1 - - [21/Sep/2023 20:17:41] "[36mGET /static/css/task.css HTTP/1.1[0m" 304 -
+2023-09-21 20:17:41,916 - INFO - 127.0.0.1 - - [21/Sep/2023 20:17:41] "[36mGET /static/css/scan_result.css HTTP/1.1[0m" 304 -
+2023-09-21 20:17:57,829 - ERROR - Exception during reset or similar
+Traceback (most recent call last):
+  File "/home/bcscan/.virtualenvs/bc_scan/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 763, in _finalize_fairy
+    fairy._reset(pool, transaction_was_reset)
+  File "/home/bcscan/.virtualenvs/bc_scan/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 1038, in _reset
+    pool._dialect.do_rollback(self)
+  File "/home/bcscan/.virtualenvs/bc_scan/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 683, in do_rollback
+    dbapi_connection.rollback()
+sqlite3.ProgrammingError: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 139664502724352 and this is thread id 139664511903488.
+2023-09-21 20:17:57,830 - ERROR - Exception closing connection <sqlite3.Connection object at 0x7f062d185570>
+Traceback (most recent call last):
+  File "/home/bcscan/.virtualenvs/bc_scan/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 763, in _finalize_fairy
+    fairy._reset(pool, transaction_was_reset)
+  File "/home/bcscan/.virtualenvs/bc_scan/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 1038, in _reset
+    pool._dialect.do_rollback(self)
+  File "/home/bcscan/.virtualenvs/bc_scan/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 683, in do_rollback
+    dbapi_connection.rollback()
+sqlite3.ProgrammingError: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 139664502724352 and this is thread id 139664511903488.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bcscan/.virtualenvs/bc_scan/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 260, in _close_connection
+    self._dialect.do_terminate(connection)
+  File "/home/bcscan/.virtualenvs/bc_scan/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 689, in do_terminate
+    self.do_close(dbapi_connection)
+  File "/home/bcscan/.virtualenvs/bc_scan/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 692, in do_close
+    dbapi_connection.close()
+sqlite3.ProgrammingError: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 139664502724352 and this is thread id 139664511903488.
+[32m2023-09-21 20:17:57 - INFO - -1[0m
+2023-09-21 20:17:57,831 - INFO - -1
+2023-09-21 20:17:57,831 - INFO - 127.0.0.1 - - [21/Sep/2023 20:17:57] "GET /task HTTP/1.1" 200 -
+2023-09-21 20:17:57,871 - INFO - 127.0.0.1 - - [21/Sep/2023 20:17:57] "[36mGET /static/css/task.css HTTP/1.1[0m" 304 -
+2023-09-21 20:17:57,875 - INFO - 127.0.0.1 - - [21/Sep/2023 20:17:57] "[36mGET /static/css/scan_result.css HTTP/1.1[0m" 304 -
+2023-09-21 20:17:58,193 - INFO - 127.0.0.1 - - [21/Sep/2023 20:17:58] "GET /upload HTTP/1.1" 200 -
+2023-09-21 20:17:58,228 - INFO - 127.0.0.1 - - [21/Sep/2023 20:17:58] "[36mGET /static/js/upload.js HTTP/1.1[0m" 304 -
+2023-09-21 20:17:58,231 - INFO - 127.0.0.1 - - [21/Sep/2023 20:17:58] "[36mGET /static/css/upload.css HTTP/1.1[0m" 304 -
+[32m2023-09-21 20:18:07 - INFO - username: jimmy[0m
+2023-09-21 20:18:07,497 - INFO - username: jimmy
+[32m2023-09-21 20:18:07 - INFO - received file upload.[0m
+2023-09-21 20:18:07,499 - INFO - received file upload.
+[32m2023-09-21 20:18:07 - INFO - file name uploads/jimmy/appdemo.wasm[0m
+2023-09-21 20:18:07,500 - INFO - file name uploads/jimmy/appdemo.wasm
+[32m2023-09-21 20:18:07 - INFO - id: -1[0m
+2023-09-21 20:18:07,500 - INFO - id: -1
+[32m2023-09-21 20:18:07 - INFO - task_status: pending[0m
+2023-09-21 20:18:07,500 - INFO - task_status: pending
+[32m2023-09-21 20:18:07 - INFO - task_filename: appdemo.wasm[0m
+2023-09-21 20:18:07,501 - INFO - task_filename: appdemo.wasm
+[32m2023-09-21 20:18:07 - INFO - task_name: Tets1[0m
+2023-09-21 20:18:07,501 - INFO - task_name: Tets1
+[32m2023-09-21 20:18:07 - INFO - task_type: EOSIO[0m
+2023-09-21 20:18:07,501 - INFO - task_type: EOSIO
+[32m2023-09-21 20:18:07 - INFO - task_date: 21/09/2023 20:18:07[0m
+2023-09-21 20:18:07,501 - INFO - task_date: 21/09/2023 20:18:07
+[32m2023-09-21 20:18:07 - INFO - task_result: None[0m
+2023-09-21 20:18:07,690 - INFO - task_result: None
+[32m2023-09-21 20:18:07 - INFO - task_duration_time: Under Estimate[0m
+2023-09-21 20:18:07,690 - INFO - task_duration_time: Under Estimate
+2023-09-21 20:18:07,693 - INFO - 127.0.0.1 - - [21/Sep/2023 20:18:07] "POST /upload HTTP/1.1" 200 -
+2023-09-21 20:18:50,416 - INFO -  * Detected change in '/home/bcscan/workspace/bc_scan/bc_scan/app.py', reloading
+2023-09-21 20:18:50,440 - ERROR - Exception during reset or similar
+Traceback (most recent call last):
+  File "/home/bcscan/.virtualenvs/bc_scan/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 763, in _finalize_fairy
+    fairy._reset(pool, transaction_was_reset)
+  File "/home/bcscan/.virtualenvs/bc_scan/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 1038, in _reset
+    pool._dialect.do_rollback(self)
+  File "/home/bcscan/.virtualenvs/bc_scan/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 683, in do_rollback
+    dbapi_connection.rollback()
+sqlite3.ProgrammingError: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 139664511903488 and this is thread id 139664637929280.
+2023-09-21 20:18:50,441 - ERROR - Exception closing connection <sqlite3.Connection object at 0x7f062d185ab0>
+Traceback (most recent call last):
+  File "/home/bcscan/.virtualenvs/bc_scan/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 763, in _finalize_fairy
+    fairy._reset(pool, transaction_was_reset)
+  File "/home/bcscan/.virtualenvs/bc_scan/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 1038, in _reset
+    pool._dialect.do_rollback(self)
+  File "/home/bcscan/.virtualenvs/bc_scan/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 683, in do_rollback
+    dbapi_connection.rollback()
+sqlite3.ProgrammingError: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 139664511903488 and this is thread id 139664637929280.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bcscan/.virtualenvs/bc_scan/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 260, in _close_connection
+    self._dialect.do_terminate(connection)
+  File "/home/bcscan/.virtualenvs/bc_scan/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 689, in do_terminate
+    self.do_close(dbapi_connection)
+  File "/home/bcscan/.virtualenvs/bc_scan/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 692, in do_close
+    dbapi_connection.close()
+sqlite3.ProgrammingError: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 139664511903488 and this is thread id 139664637929280.
+2023-09-21 20:18:50,441 - ERROR - Exception during reset or similar
+Traceback (most recent call last):
+  File "/home/bcscan/.virtualenvs/bc_scan/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 763, in _finalize_fairy
+    fairy._reset(pool, transaction_was_reset)
+  File "/home/bcscan/.virtualenvs/bc_scan/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 1038, in _reset
+    pool._dialect.do_rollback(self)
+  File "/home/bcscan/.virtualenvs/bc_scan/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 683, in do_rollback
+    dbapi_connection.rollback()
+sqlite3.ProgrammingError: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 139664511903488 and this is thread id 139664637929280.
+2023-09-21 20:18:50,441 - ERROR - Exception closing connection <sqlite3.Connection object at 0x7f062e674d50>
+Traceback (most recent call last):
+  File "/home/bcscan/.virtualenvs/bc_scan/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 763, in _finalize_fairy
+    fairy._reset(pool, transaction_was_reset)
+  File "/home/bcscan/.virtualenvs/bc_scan/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 1038, in _reset
+    pool._dialect.do_rollback(self)
+  File "/home/bcscan/.virtualenvs/bc_scan/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 683, in do_rollback
+    dbapi_connection.rollback()
+sqlite3.ProgrammingError: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 139664511903488 and this is thread id 139664637929280.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bcscan/.virtualenvs/bc_scan/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 260, in _close_connection
+    self._dialect.do_terminate(connection)
+  File "/home/bcscan/.virtualenvs/bc_scan/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 689, in do_terminate
+    self.do_close(dbapi_connection)
+  File "/home/bcscan/.virtualenvs/bc_scan/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 692, in do_close
+    dbapi_connection.close()
+sqlite3.ProgrammingError: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 139664511903488 and this is thread id 139664637929280.
+2023-09-21 20:18:50,441 - ERROR - Exception during reset or similar
+Traceback (most recent call last):
+  File "/home/bcscan/.virtualenvs/bc_scan/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 763, in _finalize_fairy
+    fairy._reset(pool, transaction_was_reset)
+  File "/home/bcscan/.virtualenvs/bc_scan/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 1038, in _reset
+    pool._dialect.do_rollback(self)
+  File "/home/bcscan/.virtualenvs/bc_scan/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 683, in do_rollback
+    dbapi_connection.rollback()
+sqlite3.ProgrammingError: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 139664511903488 and this is thread id 139664637929280.
+2023-09-21 20:18:50,441 - ERROR - Exception closing connection <sqlite3.Connection object at 0x7f062d1853b0>
+Traceback (most recent call last):
+  File "/home/bcscan/.virtualenvs/bc_scan/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 763, in _finalize_fairy
+    fairy._reset(pool, transaction_was_reset)
+  File "/home/bcscan/.virtualenvs/bc_scan/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 1038, in _reset
+    pool._dialect.do_rollback(self)
+  File "/home/bcscan/.virtualenvs/bc_scan/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 683, in do_rollback
+    dbapi_connection.rollback()
+sqlite3.ProgrammingError: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 139664511903488 and this is thread id 139664637929280.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bcscan/.virtualenvs/bc_scan/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 260, in _close_connection
+    self._dialect.do_terminate(connection)
+  File "/home/bcscan/.virtualenvs/bc_scan/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 689, in do_terminate
+    self.do_close(dbapi_connection)
+  File "/home/bcscan/.virtualenvs/bc_scan/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 692, in do_close
+    dbapi_connection.close()
+sqlite3.ProgrammingError: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 139664511903488 and this is thread id 139664637929280.
+2023-09-21 20:18:50,510 - INFO -  * Restarting with stat
+2023-09-21 20:18:50,975 - WARNING -  * Debugger is active!
+2023-09-21 20:18:50,976 - INFO -  * Debugger PIN: 757-131-889
+2023-09-21 20:19:03,210 - INFO -  * Detected change in '/home/bcscan/workspace/bc_scan/bc_scan/app.py', reloading
+2023-09-21 20:19:03,278 - INFO -  * Restarting with stat
+2023-09-21 20:19:03,737 - WARNING -  * Debugger is active!
+2023-09-21 20:19:03,738 - INFO -  * Debugger PIN: 757-131-889
+2023-09-21 21:47:33,882 - INFO -  * Detected change in '/home/bcscan/workspace/bc_scan/bc_scan/app.py', reloading
+2023-09-21 21:47:33,962 - INFO -  * Restarting with stat
+2023-09-21 21:47:34,456 - WARNING -  * Debugger is active!
+2023-09-21 21:47:34,456 - INFO -  * Debugger PIN: 757-131-889
+2023-09-21 21:47:41,177 - INFO - 127.0.0.1 - - [21/Sep/2023 21:47:41] "GET /upload HTTP/1.1" 200 -
+2023-09-21 21:47:41,224 - INFO - 127.0.0.1 - - [21/Sep/2023 21:47:41] "[36mGET /static/js/upload.js HTTP/1.1[0m" 304 -
+2023-09-21 21:47:41,228 - INFO - 127.0.0.1 - - [21/Sep/2023 21:47:41] "[36mGET /static/css/upload.css HTTP/1.1[0m" 304 -
+[32m2023-09-21 21:47:42 - INFO - -1[0m
+2023-09-21 21:47:42,891 - INFO - -1
+2023-09-21 21:47:42,896 - ERROR - Exception during reset or similar
+Traceback (most recent call last):
+  File "/home/bcscan/.virtualenvs/bc_scan/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 763, in _finalize_fairy
+    fairy._reset(pool, transaction_was_reset)
+  File "/home/bcscan/.virtualenvs/bc_scan/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 1038, in _reset
+    pool._dialect.do_rollback(self)
+  File "/home/bcscan/.virtualenvs/bc_scan/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 683, in do_rollback
+    dbapi_connection.rollback()
+sqlite3.ProgrammingError: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 139963485259520 and this is thread id 139963476342528.
+2023-09-21 21:47:42,897 - ERROR - Exception closing connection <sqlite3.Connection object at 0x7f4bca752b90>
+Traceback (most recent call last):
+  File "/home/bcscan/.virtualenvs/bc_scan/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 763, in _finalize_fairy
+    fairy._reset(pool, transaction_was_reset)
+  File "/home/bcscan/.virtualenvs/bc_scan/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 1038, in _reset
+    pool._dialect.do_rollback(self)
+  File "/home/bcscan/.virtualenvs/bc_scan/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 683, in do_rollback
+    dbapi_connection.rollback()
+sqlite3.ProgrammingError: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 139963485259520 and this is thread id 139963476342528.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bcscan/.virtualenvs/bc_scan/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 260, in _close_connection
+    self._dialect.do_terminate(connection)
+  File "/home/bcscan/.virtualenvs/bc_scan/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 689, in do_terminate
+    self.do_close(dbapi_connection)
+  File "/home/bcscan/.virtualenvs/bc_scan/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 692, in do_close
+    dbapi_connection.close()
+sqlite3.ProgrammingError: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 139963485259520 and this is thread id 139963476342528.
+2023-09-21 21:47:42,903 - INFO - 127.0.0.1 - - [21/Sep/2023 21:47:42] "GET /task HTTP/1.1" 200 -
+2023-09-21 21:47:42,944 - INFO - 127.0.0.1 - - [21/Sep/2023 21:47:42] "[36mGET /static/css/task.css HTTP/1.1[0m" 304 -
+2023-09-21 21:47:42,948 - INFO - 127.0.0.1 - - [21/Sep/2023 21:47:42] "[36mGET /static/css/scan_result.css HTTP/1.1[0m" 304 -
+2023-09-21 21:47:43,537 - INFO - 127.0.0.1 - - [21/Sep/2023 21:47:43] "GET /profile HTTP/1.1" 200 -
+[32m2023-09-21 21:47:44 - INFO - -1[0m
+2023-09-21 21:47:44,089 - INFO - -1
+2023-09-21 21:47:44,090 - INFO - 127.0.0.1 - - [21/Sep/2023 21:47:44] "GET /task HTTP/1.1" 200 -
+2023-09-21 21:47:44,125 - INFO - 127.0.0.1 - - [21/Sep/2023 21:47:44] "[36mGET /static/css/task.css HTTP/1.1[0m" 304 -
+2023-09-21 21:47:44,129 - INFO - 127.0.0.1 - - [21/Sep/2023 21:47:44] "[36mGET /static/css/scan_result.css HTTP/1.1[0m" 304 -
+2023-09-21 21:47:44,533 - INFO - 127.0.0.1 - - [21/Sep/2023 21:47:44] "GET /upload HTTP/1.1" 200 -
+2023-09-21 21:47:44,572 - INFO - 127.0.0.1 - - [21/Sep/2023 21:47:44] "[36mGET /static/js/upload.js HTTP/1.1[0m" 304 -
+2023-09-21 21:47:44,574 - INFO - 127.0.0.1 - - [21/Sep/2023 21:47:44] "[36mGET /static/css/upload.css HTTP/1.1[0m" 304 -
+[32m2023-09-21 21:47:54 - INFO - username: jimmy[0m
+2023-09-21 21:47:54,805 - INFO - username: jimmy
+[32m2023-09-21 21:47:54 - INFO - received file upload.[0m
+2023-09-21 21:47:54,807 - INFO - received file upload.
+[32m2023-09-21 21:47:54 - INFO - file name uploads/jimmy/appdemo.wasm[0m
+2023-09-21 21:47:54,807 - INFO - file name uploads/jimmy/appdemo.wasm
+[32m2023-09-21 21:47:54 - INFO - id: -1[0m
+2023-09-21 21:47:54,808 - INFO - id: -1
+[32m2023-09-21 21:47:54 - INFO - task_status: pending[0m
+2023-09-21 21:47:54,808 - INFO - task_status: pending
+[32m2023-09-21 21:47:54 - INFO - task_filename: appdemo.wasm[0m
+2023-09-21 21:47:54,808 - INFO - task_filename: appdemo.wasm
+[32m2023-09-21 21:47:54 - INFO - task_name: Ttset[0m
+2023-09-21 21:47:54,808 - INFO - task_name: Ttset
+[32m2023-09-21 21:47:54 - INFO - task_type: EOSIO[0m
+2023-09-21 21:47:54,809 - INFO - task_type: EOSIO
+[32m2023-09-21 21:47:54 - INFO - task_date: 21/09/2023 21:47:54[0m
+2023-09-21 21:47:54,809 - INFO - task_date: 21/09/2023 21:47:54
+[32m2023-09-21 21:47:54 - INFO - task_result: None[0m
+2023-09-21 21:47:54,968 - INFO - task_result: None
+[32m2023-09-21 21:47:54 - INFO - task_duration_time: Under Estimate[0m
+2023-09-21 21:47:54,969 - INFO - task_duration_time: Under Estimate
+2023-09-21 21:47:54,972 - INFO - 127.0.0.1 - - [21/Sep/2023 21:47:54] "POST /upload HTTP/1.1" 200 -
+[32m2023-09-21 21:48:27 - INFO - 0[0m
+2023-09-21 21:48:27,276 - INFO - 0
+2023-09-21 21:48:27,279 - INFO - 127.0.0.1 - - [21/Sep/2023 21:48:27] "GET /task HTTP/1.1" 200 -
+2023-09-21 21:48:27,369 - INFO - 127.0.0.1 - - [21/Sep/2023 21:48:27] "[36mGET /static/css/task.css HTTP/1.1[0m" 304 -
+2023-09-21 21:48:27,417 - INFO - 127.0.0.1 - - [21/Sep/2023 21:48:27] "[36mGET /static/css/scan_result.css HTTP/1.1[0m" 304 -
+2023-09-21 21:48:29,280 - INFO - 127.0.0.1 - - [21/Sep/2023 21:48:29] "GET /scan/-1 HTTP/1.1" 200 -
+2023-09-21 21:48:29,313 - INFO - 127.0.0.1 - - [21/Sep/2023 21:48:29] "[36mGET /static/css/task.css HTTP/1.1[0m" 304 -
+2023-09-21 21:48:29,318 - INFO - 127.0.0.1 - - [21/Sep/2023 21:48:29] "[36mGET /static/css/scan_result.css HTTP/1.1[0m" 304 -
+2023-09-21 21:55:56,596 - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2023-09-21 21:55:56,597 - INFO -  * Restarting with stat
+2023-09-21 21:55:57,081 - WARNING -  * Debugger is active!
+2023-09-21 21:55:57,081 - INFO -  * Debugger PIN: 757-131-889
+2023-09-21 21:56:13,958 - INFO - 127.0.0.1 - - [21/Sep/2023 21:56:13] "[35m[1mGET /scan/-1 HTTP/1.1[0m" 500 -
+2023-09-21 21:56:14,019 - INFO - 127.0.0.1 - - [21/Sep/2023 21:56:14] "GET /scan/-1?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2023-09-21 21:56:14,020 - INFO - 127.0.0.1 - - [21/Sep/2023 21:56:14] "GET /scan/-1?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2023-09-21 21:56:14,118 - INFO - 127.0.0.1 - - [21/Sep/2023 21:56:14] "GET /scan/-1?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2023-09-21 21:56:14,205 - INFO - 127.0.0.1 - - [21/Sep/2023 21:56:14] "GET /scan/-1?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+2023-09-21 21:56:14,432 - INFO - 127.0.0.1 - - [21/Sep/2023 21:56:14] "GET /scan/-1?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+[32m2023-09-21 21:56:16 - INFO - -1[0m
+2023-09-21 21:56:16,588 - INFO - -1
+2023-09-21 21:56:16,601 - INFO - 127.0.0.1 - - [21/Sep/2023 21:56:16] "GET /task HTTP/1.1" 200 -
+2023-09-21 21:56:16,642 - INFO - 127.0.0.1 - - [21/Sep/2023 21:56:16] "[36mGET /static/css/task.css HTTP/1.1[0m" 304 -
+2023-09-21 21:56:16,647 - INFO - 127.0.0.1 - - [21/Sep/2023 21:56:16] "[36mGET /static/css/scan_result.css HTTP/1.1[0m" 304 -
+2023-09-21 21:56:17,857 - INFO - 127.0.0.1 - - [21/Sep/2023 21:56:17] "GET /upload HTTP/1.1" 200 -
+2023-09-21 21:56:17,905 - INFO - 127.0.0.1 - - [21/Sep/2023 21:56:17] "[36mGET /static/js/upload.js HTTP/1.1[0m" 304 -
+2023-09-21 21:56:17,908 - INFO - 127.0.0.1 - - [21/Sep/2023 21:56:17] "[36mGET /static/css/upload.css HTTP/1.1[0m" 304 -
+[32m2023-09-21 21:56:18 - INFO - -1[0m
+2023-09-21 21:56:18,547 - INFO - -1
+2023-09-21 21:56:18,548 - INFO - 127.0.0.1 - - [21/Sep/2023 21:56:18] "GET /task HTTP/1.1" 200 -
+2023-09-21 21:56:18,597 - INFO - 127.0.0.1 - - [21/Sep/2023 21:56:18] "[36mGET /static/css/task.css HTTP/1.1[0m" 304 -
+2023-09-21 21:56:18,605 - INFO - 127.0.0.1 - - [21/Sep/2023 21:56:18] "[36mGET /static/css/scan_result.css HTTP/1.1[0m" 304 -
+2023-09-21 21:56:19,097 - INFO - 127.0.0.1 - - [21/Sep/2023 21:56:19] "GET /profile HTTP/1.1" 200 -
+[32m2023-09-21 21:56:19 - INFO - -1[0m
+2023-09-21 21:56:19,567 - INFO - -1
+2023-09-21 21:56:19,568 - INFO - 127.0.0.1 - - [21/Sep/2023 21:56:19] "GET /task HTTP/1.1" 200 -
+2023-09-21 21:56:19,646 - INFO - 127.0.0.1 - - [21/Sep/2023 21:56:19] "[36mGET /static/css/task.css HTTP/1.1[0m" 304 -
+2023-09-21 21:56:19,654 - INFO - 127.0.0.1 - - [21/Sep/2023 21:56:19] "[36mGET /static/css/scan_result.css HTTP/1.1[0m" 304 -
+2023-09-21 21:56:19,862 - INFO - 127.0.0.1 - - [21/Sep/2023 21:56:19] "GET /upload HTTP/1.1" 200 -
+2023-09-21 21:56:19,911 - INFO - 127.0.0.1 - - [21/Sep/2023 21:56:19] "[36mGET /static/js/upload.js HTTP/1.1[0m" 304 -
+2023-09-21 21:56:19,913 - INFO - 127.0.0.1 - - [21/Sep/2023 21:56:19] "[36mGET /static/css/upload.css HTTP/1.1[0m" 304 -
+[32m2023-09-21 21:56:29 - INFO - username: jimmy[0m
+2023-09-21 21:56:29,241 - INFO - username: jimmy
+[32m2023-09-21 21:56:29 - INFO - received file upload.[0m
+2023-09-21 21:56:29,243 - INFO - received file upload.
+[32m2023-09-21 21:56:29 - INFO - file name uploads/jimmy/appdemo.wasm[0m
+2023-09-21 21:56:29,244 - INFO - file name uploads/jimmy/appdemo.wasm
+[32m2023-09-21 21:56:29 - INFO - id: -1[0m
+2023-09-21 21:56:29,244 - INFO - id: -1
+[32m2023-09-21 21:56:29 - INFO - task_status: pending[0m
+2023-09-21 21:56:29,244 - INFO - task_status: pending
+[32m2023-09-21 21:56:29 - INFO - task_filename: appdemo.wasm[0m
+2023-09-21 21:56:29,244 - INFO - task_filename: appdemo.wasm
+[32m2023-09-21 21:56:29 - INFO - task_name: Test[0m
+2023-09-21 21:56:29,244 - INFO - task_name: Test
+[32m2023-09-21 21:56:29 - INFO - task_type: EOSIO[0m
+2023-09-21 21:56:29,244 - INFO - task_type: EOSIO
+[32m2023-09-21 21:56:29 - INFO - task_date: 21/09/2023 21:56:29[0m
+2023-09-21 21:56:29,245 - INFO - task_date: 21/09/2023 21:56:29
+[32m2023-09-21 21:56:29 - INFO - task_result: None[0m
+2023-09-21 21:56:29,420 - INFO - task_result: None
+[32m2023-09-21 21:56:29 - INFO - task_duration_time: Under Estimate[0m
+2023-09-21 21:56:29,421 - INFO - task_duration_time: Under Estimate
+2023-09-21 21:56:29,425 - INFO - 127.0.0.1 - - [21/Sep/2023 21:56:29] "POST /upload HTTP/1.1" 200 -
+[32m2023-09-21 21:56:33 - INFO - 0[0m
+2023-09-21 21:56:33,631 - INFO - 0
+2023-09-21 21:56:33,634 - INFO - 127.0.0.1 - - [21/Sep/2023 21:56:33] "GET /task HTTP/1.1" 200 -
+2023-09-21 21:56:33,681 - INFO - 127.0.0.1 - - [21/Sep/2023 21:56:33] "[36mGET /static/css/task.css HTTP/1.1[0m" 304 -
+2023-09-21 21:56:33,686 - INFO - 127.0.0.1 - - [21/Sep/2023 21:56:33] "[36mGET /static/css/scan_result.css HTTP/1.1[0m" 304 -
+2023-09-21 21:56:37,389 - INFO - 127.0.0.1 - - [21/Sep/2023 21:56:37] "GET /profile HTTP/1.1" 200 -
+[32m2023-09-21 21:56:37 - INFO - 0[0m
+2023-09-21 21:56:37,903 - INFO - 0
+2023-09-21 21:56:37,904 - INFO - 127.0.0.1 - - [21/Sep/2023 21:56:37] "GET /task HTTP/1.1" 200 -
+2023-09-21 21:56:37,942 - INFO - 127.0.0.1 - - [21/Sep/2023 21:56:37] "[36mGET /static/css/task.css HTTP/1.1[0m" 304 -
+2023-09-21 21:56:37,946 - INFO - 127.0.0.1 - - [21/Sep/2023 21:56:37] "[36mGET /static/css/scan_result.css HTTP/1.1[0m" 304 -
+2023-09-21 21:56:38,264 - INFO - 127.0.0.1 - - [21/Sep/2023 21:56:38] "GET /upload HTTP/1.1" 200 -
+2023-09-21 21:56:38,301 - INFO - 127.0.0.1 - - [21/Sep/2023 21:56:38] "[36mGET /static/js/upload.js HTTP/1.1[0m" 304 -
+2023-09-21 21:56:38,302 - INFO - 127.0.0.1 - - [21/Sep/2023 21:56:38] "[36mGET /static/css/upload.css HTTP/1.1[0m" 304 -
+2023-09-21 21:56:38,632 - INFO - 127.0.0.1 - - [21/Sep/2023 21:56:38] "GET / HTTP/1.1" 200 -
+2023-09-21 21:56:38,949 - INFO - 127.0.0.1 - - [21/Sep/2023 21:56:38] "GET /upload HTTP/1.1" 200 -
+2023-09-21 21:56:38,987 - INFO - 127.0.0.1 - - [21/Sep/2023 21:56:38] "[36mGET /static/js/upload.js HTTP/1.1[0m" 304 -
+2023-09-21 21:56:38,993 - INFO - 127.0.0.1 - - [21/Sep/2023 21:56:38] "[36mGET /static/css/upload.css HTTP/1.1[0m" 304 -

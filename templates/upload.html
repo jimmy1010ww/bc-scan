@@ -1,23 +1,48 @@
 
-{% extends "base.html" %}
+{% extends "base_2.html" %}
 
-{% block content %}
-<div class="container">
-    <h1 class="title">上傳文件</h1>
-    <p class="subtitle">選擇要上傳的文件並按下提交</p>
+
+{% block new_content %}
+<script src="{{ url_for('static', filename='js/upload.js') }}"></script>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/upload.css') }}">
+
+<div id="wrap">
+    <div id="div1" class="left-sidebar">
+        <h2 class="title">建立步驟</h2>
+        <ul>
+            <li>1. 設定專案資訊</li>
+            <li>2. 選擇要執行的類別</li>
+            <li>3. 上傳檔案</li>
+            <li>4. 執行</li>
+        </ul>
+    </div>
     
-    <form action="/upload" method="POST" enctype="multipart/form-data" class="upload-form">
-        <input type="file" name="file" accept=".wasm">
-        <br><br>
-        <button type="submit" name="submit">Upload File</button>
-    </form>
+    <div id="div2" class="right-form">
+        <form action="/upload" method="POST" enctype="multipart/form-data" class="upload-form" onsubmit="return showConfirmation()">
+            <div>
+                <label >任務名稱<span class="div-label">*</span></label>
+                <input type="text" name="task_name" access="false" required="required" aria-required="true">
+            </div>
+            <div>
+                <label>合約類別<span class="div-label">*</span></label>
+                <br>
+                <select  name="contract_category" required="required" aria-required="true">
+                    <option value="EOSIO" selected="true" >EOSIO</option>
+                    <option value="Ethereum">Ethereum</option>
+                </select>
+            </div>
+            <div>
+                <label>上傳合約<span class="div-label">*</span></label>
+                <br>
+                <input type="file" name="file" access="false" multiple="false" required="required" aria-required="true", accept=".wasm">
+            </div>
+            <div>
+                <button type="submit" name="submit" access="false" style="default">建立任務</button>
+            </div>
+        </form>
+    </div>
 
-    {% if uploading %}
-        <p>上傳中...</p>
-    {% endif %}
-
-    {% if success_message %}
-        <p>{{ success_message }}</p>
-    {% endif %}
 </div>
+
+
 {% endblock %}

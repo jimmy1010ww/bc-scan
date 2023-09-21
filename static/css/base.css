@@ -1,0 +1,13 @@
+.navbar, .navbar-end, .navbar-menu, .navbar-start {
+    align-items: stretch;
+    display: flex;
+}
+
+.navbar-menu {
+    flex-grow: 1;
+    flex-shrink: 0;
+}
+
+.container>.navbar .navbar-menu, .navbar>.container .navbar-menu {
+    margin-right: -0.75rem;
+}

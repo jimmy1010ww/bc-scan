@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/task.css') }}">
+
+<div id="wrap">
+    <div id="div1" class="sidebar">
+        <h2>選擇掃描</h2>
+        <ul>
+            {% for task in task_result %}
+                <li><a href="/scan/{{ task.id }}">{{ task.task_name }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div id="div2" class="main-content">
+        {{ scan_result | safe }}
+        
+    </div>
+</div>
+
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+    $(document).ready(function() {
+        $('ul li a').click(function() {
+            // 取得點擊的掃描 ID
+            var scan_id = $(this).attr('href').split('/')[2];
+
+            // 使用 Flask 取得掃描資訊
+            $.get('/scan/' + scan_id, function(data) {
+                // 更新掃描資訊
+                $('#scan-details h2').html(data.scan_name);
+                $('#scan-details p:first-child').html('掃描日期: ' + data.scan_date);
+                $('#scan-details p:last-child').html(data.scan_result);
+            });
+        });
+    });
+</script>
+{% endblock %}

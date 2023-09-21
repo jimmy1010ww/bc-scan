@@ -1,0 +1,33 @@
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f5f5f5;
+    width: 100%; 
+}
+
+h2 {
+    color: #F6E7CB;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.task-table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+
+.task-table td {
+    color: black;
+    padding: 8px;
+    border: 5px solid #1E1E24;
+    background-color: #F6E7CB;
+    border-radius: 5px;
+}
+
+.task-table td:first-child {
+    width: 100px;
+    font-weight: bold;
+    
+}

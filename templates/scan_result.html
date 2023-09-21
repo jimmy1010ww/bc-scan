@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/scan_result.css') }}">
+    <meta charset="UTF-8">
+</head>
+<body>
+    <h2>{{task.task_name}}</h2>
+    <table class="task-table">
+        <tr>
+            <td>檔案名稱</td>
+            <td>{{ task.task_filename }}</td>
+        </tr>
+        <tr>
+            <td>合約類型</td>
+            <td>{{ task.task_type }}</td>
+        </tr>
+        <tr>
+            <td>掃描日期</td>
+            <td>{{ task.task_date }}</td>
+        </tr>
+        <tr>
+            <td>掃描時間</td>
+            <td>{{ task.task_duration_time }}</td>
+        </tr>
+        <tr>
+            <td>掃描結果</td>
+            <td>{{ task.task_result }}</td>
+        </tr>
+    </table>
+    
+</body>
+</html>
