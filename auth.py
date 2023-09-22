@@ -4,9 +4,24 @@ from flask import Blueprint, render_template, redirect, url_for, request, flash
 from flask_login import login_user, logout_user, login_required
 from werkzeug.security import generate_password_hash, check_password_hash
 from models import User, db
+import os
 
 auth = Blueprint('auth', __name__)
 
+UPLOAD_FOLDER = 'uploads'
+RESULT_FOLDER = 'results'
+
+def create_upload_folder(folder_name):
+    # 確認 UPLOAD_FOLDER 目錄下是否有使用者名稱的資料夾
+    if not os.path.exists(os.path.join(UPLOAD_FOLDER, folder_name)):
+        # 若無，則建立資料夾
+        os.makedirs(os.path.join(UPLOAD_FOLDER, folder_name))
+
+def create_result_folder(folder_name):
+    # 確認 RESULT_FOLDER 目錄下是否有使用者名稱的資料夾
+    if not os.path.exists(os.path.join(RESULT_FOLDER, folder_name)):
+        # 若無，則建立資料夾
+        os.makedirs(os.path.join(RESULT_FOLDER, folder_name))
 
 @auth.route('/login')
 def login():
@@ -56,6 +71,9 @@ def signup_post():
     # add the new user to the database
     db.add(new_user)
     db.commit()
+    
+    create_upload_folder(name)
+    create_result_folder(name)
 
     # code to validate and add user to database goes here
     return redirect(url_for('auth.login'))

@@ -9,6 +9,8 @@ from datetime import datetime, date
 
 main = Blueprint('main', __name__)
 UPLOAD_FOLDER = 'uploads'
+RESULT_FOLDER = 'results'
+
 logger = logging.getLogger('app_log')
 
 current_result_id = -1
@@ -64,12 +66,6 @@ def upload_file():
             task_name = request.form.get('task_name')
             contract_category = request.form.get('contract_category')
                  
-            
-            
-            # 確認 UPLOAD_FOLDER 目錄下是否有使用者名稱的資料夾
-            if not os.path.exists(os.path.join(UPLOAD_FOLDER, username)):
-                # 若無，則建立資料夾
-                os.makedirs(os.path.join(UPLOAD_FOLDER, username))
 
             # 確認是否有上傳檔案              
             if file.filename != '':
@@ -140,3 +136,4 @@ def scan_result(scan_id):
         return render_template('task.html', task=empty_scan_result, task_result=[empty_scan_result], scan_result=render_template("empty_scan_result.html", task=None, streamed=True))
     else:
         return render_template("task.html", task=scan_results[0], task_result=scan_results, scan_result=render_template("scan_result.html", task=scan_results[int(scan_id)], streamed=True))
+    

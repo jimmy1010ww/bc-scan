@@ -4,7 +4,7 @@
 
 {% block content %}
 <div class="column is-4 is-offset-4">
-    <h3 class="title">Login</h3>
+    <h3 class="title">登入</h3>
     <div class="box">
         {% with messages = get_flashed_messages() %}
             {% if messages %}
@@ -17,22 +17,22 @@
         <form method="POST" action="/login">
             <div class="field">
                 <div class="control">
-                    <input class="input is-large" type="email" name="email" placeholder="Your Email" autofocus="">
+                    <input class="input is-large" type="email" name="email" placeholder="你的 電子郵件" autofocus="">
                 </div>
             </div>
 
             <div class="field">
                 <div class="control">
-                    <input class="input is-large" type="password" name="password" placeholder="Your Password">
+                    <input class="input is-large" type="password" name="password" placeholder="你的 密碼">
                 </div>
             </div>
             <div class="field">
                 <label class="checkbox">
                     <input type="checkbox">
-                    Remember me
+                    記得我
                 </label>
             </div>
-            <button class="button is-block is-info is-large is-fullwidth">Login</button>
+            <button class="button is-block is-info is-large is-fullwidth">登入</button>
         </form>
     </div>
 </div>
