@@ -2,11 +2,31 @@
 
 {% extends "base_2.html" %}
 
+
 {% block new_content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
 
-<div>
-  
+<script src="https://cdn.fusioncharts.com/fusioncharts/latest/fusioncharts.js"></script>
+<script src="https://cdn.fusioncharts.com/fusioncharts/latest/themes/fusioncharts.theme.candy.js"></script>
+<script src="https://unpkg.com/jquery-fusioncharts@1.1.0/dist/fusioncharts.jqueryplugin.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="{{ url_for('static', filename='js/gaugeChart.js') }}"></script>
 
+
+
+<div class="divTable">
+    <div class="divTableBody">
+        <div class="divTableRow">
+            <div class="chart-container" id="chart-container-number-of-scans"></div>
+            <div class="chart-container" id="chart-container-number-of-exploit"></div>
+            <div class="chart-container" id="chart-container-number-type-vulnerabilities"></div>
+        </div>
+        <div class="divTableRow">
+            <div class="divTableCell">fasdfsafad1;</div>
+            <div class="divTableCell">1;</div>
+            <div class="divTableCell">1;</div>
+        </div>
+    </div>
 </div>
 
 {% endblock %}

@@ -1,6 +1,6 @@
 # main.py
 
-from flask import Blueprint, render_template, request
+from flask import Blueprint, render_template, request, jsonify
 from flask_login import login_required, current_user
 import logging
 import os
@@ -45,7 +45,7 @@ def exec_wana(filename):
 
 @main.route('/')
 def index():
-    return render_template('index.html')
+    return render_template("index.html")
 
 @main.route('/upload')
 @login_required
@@ -137,3 +137,16 @@ def scan_result(scan_id):
     else:
         return render_template("task.html", task=scan_results[0], task_result=scan_results, scan_result=render_template("scan_result.html", task=scan_results[int(scan_id)], streamed=True))
     
+@main.route('/get_task_num', methods=['GET'])
+@login_required
+def get_task_num():
+    try:
+        data = {
+            "value": len(scan_results)
+        }
+    except:
+        data = {
+            "value": 0
+        }
+    
+    return jsonify(data)
