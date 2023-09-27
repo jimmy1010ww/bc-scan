@@ -3,3 +3,6 @@ venv/
 *.sqlite
 *.pyc
 __pycache__/
+*.log
+logs/
+results/

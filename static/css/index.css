@@ -33,4 +33,5 @@ div.divTable{
     box-sizing: border-box;
     padding: 10px;
     float: left;
+    border-radius: 20px;
 }

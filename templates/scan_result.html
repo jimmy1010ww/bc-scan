@@ -8,6 +8,10 @@
     <h2>{{task.task_name}}</h2>
     <table class="task-table">
         <tr>
+            <td>掃描狀態</td>
+            <td id="taskStatus">{{ task.task_status }}</td>
+        </tr>
+        <tr>
             <td>檔案名稱</td>
             <td>{{ task.task_filename }}</td>
         </tr>
@@ -21,7 +25,7 @@
         </tr>
         <tr>
             <td>掃描時間</td>
-            <td>{{ task.task_duration_time }}</td>
+            <td id="taskDurationTime">{{ task.task_duration_time }}</td>
         </tr>
         <tr>
             <td>掃描結果</td>
@@ -33,14 +37,17 @@
         setInterval(updateTaskResult, 5000);
 
         function updateTaskResult() {
-            fetch("/get_task_result/{{ task.task_id }}")
+            fetch("/get_task_status/{{ task.id }}")
                 .then(response => response.json())
                 .then(data => {
-                    // 更新页面上的task_result
+                    // 更新頁面上面的task狀態
+                    document.getElementById("taskStatus").textContent = data.task_status;
+                    document.getElementById("taskDurationTime").textContent = data.task_duration_time;
                     document.getElementById("taskResult").textContent = data.task_result;
+
                 })
                 .catch(error => {
-                    console.error("获取数据时发生错误:", error);
+                    console.error("無法抓取資料:", error);
                 });
         }
     </script>
