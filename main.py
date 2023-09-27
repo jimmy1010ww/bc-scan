@@ -6,6 +6,7 @@ import logging
 import os
 import subprocess
 from datetime import datetime, date
+from multiprocessing import Process
 
 main = Blueprint('main', __name__)
 UPLOAD_FOLDER = 'uploads'
@@ -29,19 +30,66 @@ empty_scan_result = {
     "task_result": "None"
 }
 
-def exec_wana(filename):
-    # 執行指令：python3 WANA/wana.py -t 20 -e contract.wasm
+def create_task(id, task_status, task_name, task_type, task_filename, task_date, task_duration_time, task_result, wasm_filepath, output_filepath):
+    global current_result_id
+    global scan_results
     
-    command = ['python3', 'WANA/wana.py', '-o', 'result.txt', '-e', filename]
-    try:
-        subprocess.run(command, check=True)
-        result = "Command executed successfully."
-        # logger.info("Command executed successfully.")
-    except subprocess.CalledProcessError as e:
-        result = "Error executing command: {}".format(e)
-        # logger.error("Error executing command: {}".format(e))
+    scan_results.append(
+        {
+            "id": str(id),
+            "task_status": task_status,
+            "task_filename": task_filename,
+            "task_name": task_name,
+            "task_type": task_type,
+            "task_date": task_date,
+            "task_duration_time": task_duration_time,
+            "task_result": task_result
+        }
+    )
+    
+    
+    
+    logger.info("id: %s" % id)
+    logger.info("task_status: %s" % scan_results[0]["task_status"])
+    logger.info("task_filename: %s" % scan_results[0]["task_filename"])
+    logger.info("task_name: %s" % scan_results[0]["task_name"])
+    logger.info("task_type: %s" % scan_results[0]["task_type"])
+    logger.info("task_date: %s" % scan_results[0]["task_date"])
+    
+    
+    process = Process(target=exec_wana, args=(wasm_filepath, output_filepath, task_type))
+    process.start()        
+                    
 
-    return result
+
+def exec_wana(wasm_filepath, output_filepath, task_type='EOSIO'):
+    try:
+        command = []
+        
+        # check task type
+        if task_type != "EOSIO" and task_type != "Ethereum":
+            raise Exception("Invalid task type.")
+        
+        # EOSIO smart contract
+        if task_type == "EOSIO":
+            # python3 wana.py -e contract.wasm
+            command = ['python3', 'WANA/wana.py', '-o', str(output_filepath), '-e', str(wasm_filepath)]
+        # Ethereum smart contract
+        elif task_type == "Ethereum":
+            # python3 wana.py --sol -e ethereum_contract.wasm
+            command = ['python3', 'WANA/wana.py', '--sol', '-o', str(output_filepath), '-e', str(wasm_filepath)]
+        
+
+        try:
+            logger.info("executing command: %s" % command)
+            subprocess.run(command, check=True)
+        except subprocess.CalledProcessError as e:
+            result = "Error executing command: {}".format(e)
+
+        return result
+    except Exception as e:
+        logger.error("Error: %s" % e)
+        return "Error: %s" % e
 
 @main.route('/')
 def index():
@@ -56,6 +104,7 @@ def upload():
 @login_required
 def upload_file():
     global current_result_id
+    
     # 從登入狀態中取得使用者名稱
     username = current_user.name    
     logger.info("username: %s" % username)
@@ -64,49 +113,27 @@ def upload_file():
         if 'file' in request.files:
             file = request.files['file']
             task_name = request.form.get('task_name')
-            contract_category = request.form.get('contract_category')
+            task_type = request.form.get('contract_category')
+            filename = file.filename
                  
 
             # 確認是否有上傳檔案              
             if file.filename != '':
                 uploading = True  # 開始上傳
                     
-                filename = os.path.join(UPLOAD_FOLDER, username, file.filename)
-                file.save(filename)
+                # 儲存檔案到指定位置
+                wasm_filepath = os.path.join(UPLOAD_FOLDER, username, file.filename)
+                result_filepath = os.path.join(RESULT_FOLDER, username, task_name+'_result.txt')
+                file.save(wasm_filepath)
+                
                 logger.info("received file upload.")
-                logger.info("file name %s" % filename)
+                logger.info("save file at %s" % wasm_filepath)
                 
                 now = datetime.now()
-
-                scan_results.append(
-                    {
-                        "id": str(current_result_id),
-                        "task_status": "pending",
-                        "task_filename": file.filename,
-                        "task_name": task_name,
-                        "task_type": contract_category,
-                        "task_date": now.strftime("%d/%m/%Y %H:%M:%S"),
-                        "task_duration_time": "Under Estimate",
-                        "task_result": "None"
-                    }
-                )
-                
-                logger.info("id: %s" % current_result_id)
-                logger.info("task_status: %s" % scan_results[0]["task_status"])
-                logger.info("task_filename: %s" % scan_results[0]["task_filename"])
-                logger.info("task_name: %s" % scan_results[0]["task_name"])
-                logger.info("task_type: %s" % scan_results[0]["task_type"])
-                logger.info("task_date: %s" % scan_results[0]["task_date"])
                 
                 
+                create_task(current_result_id + 1, "Scanning", task_name, task_type, filename, str(now.strftime("%d/%m/%Y %H:%M:%S")), "Scanning", "Scanning", wasm_filepath, result_filepath)
                 current_result_id += 1
-                
-                scan_results[0]["task_status"] = "running"
-                
-                exec_wana(filename) 
-                                
-                logger.info("task_result: %s" % scan_results[0]["task_result"])
-                logger.info("task_duration_time: %s" % scan_results[0]["task_duration_time"])
         else:
             print("no file")
                 

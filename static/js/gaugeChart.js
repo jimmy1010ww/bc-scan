@@ -67,7 +67,7 @@ var dataSource_number_of_explit = {
 
 var dataSource = {
     chart: {
-      caption: "Market Share of Web Servers",
+      caption: "弱點分布圖",
       plottooltext: "<b>$percentValue</b> of web servers run on $label servers",
       showlegend: "1",
       showpercentvalues: "1",

@@ -25,9 +25,24 @@
         </tr>
         <tr>
             <td>掃描結果</td>
-            <td>{{ task.task_result }}</td>
+            <td id="taskResult">{{ task.task_result }}</td>
         </tr>
     </table>
-    
+
+    <script>
+        setInterval(updateTaskResult, 5000);
+
+        function updateTaskResult() {
+            fetch("/get_task_result/{{ task.task_id }}")
+                .then(response => response.json())
+                .then(data => {
+                    // 更新页面上的task_result
+                    document.getElementById("taskResult").textContent = data.task_result;
+                })
+                .catch(error => {
+                    console.error("获取数据时发生错误:", error);
+                });
+        }
+    </script>
 </body>
 </html>
